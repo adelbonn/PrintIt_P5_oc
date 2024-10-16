@@ -1,8 +1,9 @@
-# Print-It WebSite v.1
-#PrintIt_p5_oc
-#Projet openclassroom, ce projet consiste à dynamiser le site PrintIt (site d'une petite imprimerie), ce site étant statique le directeur veux le dynamiser en y ajoutant un carrousel.
 
-#Pour débuter le projet nous avons le html et le css déjà présent.
+## PrintIt_p5_oc
+
+Projet openclassroom, ce projet consiste à dynamiser le site PrintIt (site d'une petite imprimerie), ce site étant statique le directeur veux le dynamiser en y ajoutant un carrousel.
+
+Pour débuter le projet nous avons le html et le css déjà présent.
 
 ## Technologies utilisées : 
 - html
