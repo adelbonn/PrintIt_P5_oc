@@ -128,12 +128,19 @@ header {
 }
 #banner .arrow_left {
 	display: inline-block;
-
+	height: 45px;
+    width: auto;
+	object-fit: contain;
 	left: 10px;
+	transform: translateY(-50%);
 }
 #banner .arrow_right {
 	display: inline-block;
+	height: 45px;
+    width: auto;
+	object-fit: contain;
 	right: 10px;
+	transform: translateY(-60%); ;
 }
 /* Gestion des points du carrousel */
 .dots {
@@ -148,7 +155,7 @@ header {
 	background-color: #ffffff00;
 	border: 3px solid #fff;
 	border-radius: 100%;
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .dot_selected {
 	background-color: #fff;
