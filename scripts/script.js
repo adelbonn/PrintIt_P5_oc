@@ -49,7 +49,22 @@ arrowRight.classList.add("arrow", "arrow_right");
 //ajout de l'enfant arrowRight à lélément div banner
 banner.appendChild(arrowRight);
 
-console.log(arrowLeft, arrowRight)
+//ajout des eventLiteer au clic sur les flèches
+
+//ajout d'un eventlistener sur la flèche gauche
+arrowLeft.addEventListener('click', () => {
+	console.log('flèche gauche cliquée')
+})
+
+//ajout d'un eventlistener sur la flèche droite
+arrowRight.addEventListener('click', () => {
+	console.log('flèche droite cliquée')
+})
+
+
+
+
+
 
 
 
