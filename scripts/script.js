@@ -19,38 +19,27 @@
 
 
 
-//ajout des flèches dans la balise banner
-
-//déclaration de la variable arrowLeft
+//ajout des flèches dans la balise banner //
+//ajout de arrowLeft
 const arrowLeft = document.createElement('img');
 
-//definit le chemin de arrowLeft
 arrowLeft.src = '../assets/images/arrow_left.png';
-
-//ajout des classes arrow et arrow_left à arrowLeft
 arrowLeft.classList.add('arrow', 'arrow_left');
-
- //sélection de l'élément banner + ajout de arrowLeft
 const banner = document.getElementById('banner')
-//9 ajout de l'enfant arrowLeft à l'élément div banner dans le DOM
 banner.appendChild(arrowLeft)
 
- 
 
 //ajout de arrowRight
 
-//déclaration de la variables arrow_right
 const arrowRight = document.createElement('img');
-//définir le chemin vers mon image
+
 arrowRight.src = "../assets/images/arrow_right.png";
-//ajout des class arrow et arrow_right à arrowRight
 arrowRight.classList.add("arrow", "arrow_right");
-//ajout de l'enfant arrowRight à lélément div banner dans le DOM
 banner.appendChild(arrowRight);
 
 
 
-//ajout des eventListener au clic sur les flèches + le console.log
+//ajout des eventListener au clic sur les flèches + le console.log//
 
 //ajout d'un eventlistener sur arrowLeft
 arrowLeft.addEventListener('click', () => {
@@ -62,17 +51,17 @@ arrowRight.addEventListener('click', () => {
 	console.log('flèche droite cliquée')
 })
 
+
+//ajout des bullets points et des images dans le banner//
 //ajout des bullets points
-//sélection du container des bullets points
-const bullets = document.querySelector('.dots') //sélectionne le container des bullets points
-// creation des bullets points
-for(let i = 0; i < slides.length; i++) {  //boucle pour ajouter les bullets points (expliquer cette boucle dans la présentation)
-	let dot = document.createElement('div'); //crée un élément div
-	dot.classList.add('dot');                 //ajoute la classe dot à l'élément div
-	// if(i === 0) {                           // si i est strictement égal à 0
-	// 	dot.classList.add('dot_selected');     //ajoute la classe dot_selected à l'élément div
-	// }
-	bullets.appendChild(dot);  //ajoute l'élément dot en tant qu'enfant de dots ( le container des bullets points)
+
+const bullets = document.querySelector('.dots') 
+// creation des bullets points avec la boucle for et ajout de la classe dot
+for(let i = 0; i < slides.length; i++) {  
+	let dot = document.createElement('div');
+	dot.classList.add('dot');                 
+
+	bullets.appendChild(dot); 
 }
 
 
@@ -84,22 +73,22 @@ let dotList = document.querySelectorAll('.dot');
 dotList[0].classList.add('dot_selected'); 
 
 
+//ajout des eventListener sur les flèches pour que lorsque l'utiliateur clik sur les flèches, le slide change
+arrowRight.addEventListener('click', () => {
+	nextSlide();
+	updateBannerImage(slideSelected);
+})
 
-//utilisation d'une fonction par action désirée
+arrowLeft.addEventListener('click', () => {
+	prevSlide();
+	updateBannerImage(slideSelected);
+})
 
-//fonction pour afficher le slide suivant
 
-// function nextSlide() {
-// 	if(slideSelected < slides.length - 1) { //si le slide sélectionné est inférieur à la longueur du tableau slides - 1(le moins indique le dernier élement du tableau)
-// 		slideSelected++; //alors on incrémente le slide sélectionné
-// 	} else {
-// 		slideSelected = 0; //sinon on revient au premier slide
-// 	}
-//  	console.log('slide sélectionné', slideSelected); 
-//  }
+
+//mise en place du défilement infini avec les conditions dans les fonctions nextSlide et prevSlide
 
 function nextSlide() {
-	//console.log('slide suivant');
 	dotList[slideSelected].classList.remove("dot_selected");
 	slideSelected++;
 	if (slideSelected >= slides.length) {
@@ -110,12 +99,12 @@ function nextSlide() {
 
 //function pour afficher le slide précédent
 function prevSlide () {
-	//console.log('slide précédent');
 	dotList[slideSelected].classList.remove("dot_selected"); 
 	slideSelected--;
 	if (slideSelected < 0) {
 		slideSelected = slides.length -1;
 	}
+	dotList[slideSelected].classList.add("dot_selected")
 }
 
 //function pour mettre à jour l'image du banner
@@ -125,13 +114,4 @@ function updateBannerImage(index) {
 	document.querySelector('#banner p').innerHTML = slides[index].tagLine;
 }
 
-//ajout des eventListener sur les flèches pour faire tourner le carrousel
-arrowRight.addEventListener('click', () => {
-	nextSlide();
-	updateBannerImage(slideSelected);
-})
 
-arrowLeft.addEventListener('click', () => {
-	prevSlide();
-	updateBannerImage(slideSelected);
-})
