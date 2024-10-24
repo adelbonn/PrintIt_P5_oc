@@ -19,7 +19,7 @@ Pour débuter le projet nous avons le html et le css déjà présent.
 - scripts : fichiers des scripts Javascript du projet
 
 ## Fonctionnalités à ajouter 
--un carrousel d'images dans la banière du site avec de nouvelles images et un texte pour chacunes d'elles, deux flèches pour naviguer dans le carrousel et des bullet points qui montre où on se trouve dans la navigation dans le carrousel.
+Un carrousel d'images dans la banière du site avec de nouvelles images et un texte pour chacunes d'elles, deux flèches pour naviguer dans le carrousel et des bullet points qui montre où on se trouve dans la navigation dans le carrousel.
 L'utilisateur doit pouvoir cliqué sur la flèche droite pour voir les images suivantes et sur la flèche gauche pour voir les images précédentes.
 
  - ajouter des eventlistener sur chacune des deux flèches
@@ -28,6 +28,6 @@ L'utilisateur doit pouvoir cliqué sur la flèche droite pour voir les images su
  - mettre un défilement infini sur le carrousel
 
 ## Utilisation
-Pour voir le site en local ouvrir le fichier index.html dans votre navigateur ou utiliser iverserver dan son IDE
+Pour voir le site en local ouvrir le fichier index.html dans votre navigateur ou utiliser liverserver dan son IDE
 
 
