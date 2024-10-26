@@ -23,7 +23,7 @@ const slides = [
 //ajout de arrowLeft
 const arrowLeft = document.createElement('img');
 
-arrowLeft.src = '../assets/images/arrow_left.png';
+arrowLeft.src = './assets/images/arrow_left.png';
 arrowLeft.classList.add('arrow', 'arrow_left');
 const banner = document.getElementById('banner');
 banner.appendChild(arrowLeft)
@@ -33,7 +33,7 @@ banner.appendChild(arrowLeft)
 
 const arrowRight = document.createElement('img');
 
-arrowRight.src = "../assets/images/arrow_right.png";
+arrowRight.src = "./assets/images/arrow_right.png";
 arrowRight.classList.add("arrow", "arrow_right");
 banner.appendChild(arrowRight);
 
