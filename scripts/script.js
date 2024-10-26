@@ -1,19 +1,19 @@
- const slides = [
+const slides = [
 	{
-		"image":"slide1.jpg",
-		"tagLine":"Impressions tous formats <span>en boutique et en ligne</span>"
+		"image": "slide1.jpg",
+		"tagLine": "Impressions tous formats <span>en boutique et en ligne</span>"
 	},
 	{
-		"image":"slide2.jpg",
-		"tagLine":"Tirages haute définition grand format <span>pour vos bureaux et events</span>"
+		"image": "slide2.jpg",
+		"tagLine": "Tirages haute définition grand format <span>pour vos bureaux et events</span>"
 	},
 	{
-		"image":"slide3.jpg",
-		"tagLine":"Grand choix de couleurs <span>de CMJN aux pantones</span>"
+		"image": "slide3.jpg",
+		"tagLine": "Grand choix de couleurs <span>de CMJN aux pantones</span>"
 	},
 	{
-		"image":"slide4.png",
-		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
+		"image": "slide4.png",
+		"tagLine": "Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
 
@@ -42,26 +42,26 @@ banner.appendChild(arrowRight);
 //ajout des eventListener au clic sur les flèches + le console.log//
 
 //ajout d'un eventlistener sur arrowLeft
-arrowLeft.addEventListener('click', () => {
-	console.log('flèche gauche cliquée')
-})
+// arrowLeft.addEventListener('click', () => {
+// 	console.log('flèche gauche cliquée')
+// })
 
-//ajout d'un eventlistener sur arrowRight
-arrowRight.addEventListener('click', () => {
-	console.log('flèche droite cliquée')
-})
+// //ajout d'un eventlistener sur arrowRight
+// arrowRight.addEventListener('click', () => {
+// 	console.log('flèche droite cliquée')
+// })
 
 
 //ajout des bullets points et des images dans le banner//
 //ajout des bullets points
 // creation des bullets points avec la boucle for et ajout de la classe dot
-const bullets = document.querySelector('.dots') 
+const bullets = document.querySelector('.dots')
 
-for(let i = 0; i < slides.length; i++) {  
+for (let i = 0; i < slides.length; i++) {
 	let dot = document.createElement('div');
-	dot.classList.add('dot');                 
+	dot.classList.add('dot');
 
-	bullets.appendChild(dot); 
+	bullets.appendChild(dot);
 }
 
 
@@ -69,17 +69,19 @@ for(let i = 0; i < slides.length; i++) {
 
 //initialisation des variables
 let slideSelected = 0; //variable pour stocker l'index du slide actuel
-let dotList = document.querySelectorAll('.dot'); 
-dotList[0].classList.add('dot_selected'); 
+let dotList = document.querySelectorAll('.dot');
+dotList[0].classList.add('dot_selected');
 
 
 //ajout des eventListener sur les flèches pour que lorsque l'utiliateur clik sur les flèches, le slide change
 arrowRight.addEventListener('click', () => {
+	console.log('flèche droite cliquée')
 	nextSlide();
 	updateBannerImage(slideSelected);
 })
 
 arrowLeft.addEventListener('click', () => {
+	console.log('flèche gauche cliquée')
 	prevSlide();
 	updateBannerImage(slideSelected);
 })
@@ -100,19 +102,19 @@ function nextSlide() {
 }
 
 //function pour afficher le slide précédent
-function prevSlide () {
-	dotList[slideSelected].classList.remove("dot_selected"); 
+function prevSlide() {
+	dotList[slideSelected].classList.remove("dot_selected");
 	slideSelected--;
 	if (slideSelected < 0) {
-		slideSelected = slides.length -1;
+		slideSelected = slides.length - 1;
 	}
 	dotList[slideSelected].classList.add("dot_selected")
 }
 
 //function pour mettre à jour l'image et le texte du banner
 function updateBannerImage(index) { //
-	const bannerImage = document.querySelector('.banner-img'); 
-	bannerImage.src = "./assets/images/slideshow/" + slides[index].image; 
+	const bannerImage = document.querySelector('.banner-img');
+	bannerImage.src = "./assets/images/slideshow/" + slides[index].image;
 	document.querySelector('#banner p').innerHTML = slides[index].tagLine;
 }
 
@@ -124,7 +126,7 @@ for (let j = 0; j < dotList.length; j++) {
 		slideSelected = j;
 		dotList[slideSelected].classList.add('dot_selected');
 		updateBannerImage(slideSelected);
-		
+
 	})
 }
 
