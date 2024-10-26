@@ -54,9 +54,9 @@ arrowRight.addEventListener('click', () => {
 
 //ajout des bullets points et des images dans le banner//
 //ajout des bullets points
-
-const bullets = document.querySelector('.dots') 
 // creation des bullets points avec la boucle for et ajout de la classe dot
+const bullets = document.querySelector('.dots') 
+
 for(let i = 0; i < slides.length; i++) {  
 	let dot = document.createElement('div');
 	dot.classList.add('dot');                 
@@ -65,12 +65,12 @@ for(let i = 0; i < slides.length; i++) {
 }
 
 
-//modifier le slide au clic sur les flèches
+//modifier le slide au clic sur les flèches et ajout de dot_selected sur le bullet point correspondant au slide actuel//
 
 //initialisation des variables
 let slideSelected = 0; //variable pour stocker l'index du slide actuel
-let dotList = document.querySelectorAll('.dot'); //variable pour stocker la liste des bullets points, qui est en fait une Nodelist et donc je peux la travailler (manipuler ces éléments) comme un tableau
-dotList[0].classList.add('dot_selected'); //	ajout de la classe dot_selected sur le premier bullet point
+let dotList = document.querySelectorAll('.dot'); 
+dotList[0].classList.add('dot_selected'); 
 
 
 //ajout des eventListener sur les flèches pour que lorsque l'utiliateur clik sur les flèches, le slide change
@@ -88,6 +88,7 @@ arrowLeft.addEventListener('click', () => {
 
 //mise en place du défilement infini avec les conditions dans les fonctions nextSlide et prevSlide
 //un fonction par action
+//function pour afficher le slide suivant
 function nextSlide() {
 	dotList[slideSelected].classList.remove("dot_selected");
 	slideSelected++;
@@ -95,6 +96,7 @@ function nextSlide() {
 		slideSelected = 0;
 	}
 	dotList[slideSelected].classList.add("dot_selected")
+	// console.log(slideSelected)
 }
 
 //function pour afficher le slide précédent
@@ -107,32 +109,22 @@ function prevSlide () {
 	dotList[slideSelected].classList.add("dot_selected")
 }
 
-//function pour mettre à jour l'image du banner
-function updateBannerImage(index) {
-	const bannerImage = document.querySelector('.banner-img');
-	bannerImage.src = "./assets/images/slideshow/" + slides[index].image;
+//function pour mettre à jour l'image et le texte du banner
+function updateBannerImage(index) { //
+	const bannerImage = document.querySelector('.banner-img'); 
+	bannerImage.src = "./assets/images/slideshow/" + slides[index].image; 
 	document.querySelector('#banner p').innerHTML = slides[index].tagLine;
 }
 
-//ajout de l'eventListener sur les bullets points afin que lorsque l'utilisateur clique sur un bullet point il vois s'afficher l'image correspondante à ce bullet point
-// //utilisation de la boucle for
-// for(let j = 0; j < dotList.length; j++) {
-// 	dotList[j].addEventListener('click', ()n => {
-// 		dotList[slideSelected].classList.remove('dot_selected');
-// 		slideSelected = j;
-// 		dotList[slideSelected].classList.add('dot_selected');
-// 		updateBannerImage(slideSlected)
-// 		console.log('bullet point cliqué')
-// 	})
-// }
-//comme je l'ai dit plus haut, la variable dotList est une Nodelist et donc je peux la travailler comme un tableau, donc je peux utiliser la boucle for pour ajouter un eventListener à chaque bullet point
+//ajout de l'eventListener sur les bullets points afin que lorsque l'utilisateur clique sur un bullet point, il voit s'afficher l'image correspondante à ce bullet point
+//ici j'utilise le même principe que ce que j'ai fait pour les flèches, mais cette fois-ci je le fais pour les bullets points
 for (let j = 0; j < dotList.length; j++) {
 	dotList[j].addEventListener('click', () => {
 		dotList[slideSelected].classList.remove('dot_selected');
 		slideSelected = j;
 		dotList[slideSelected].classList.add('dot_selected');
 		updateBannerImage(slideSelected);
-		console.log('bullet point cliqué');
+		
 	})
 }
 
