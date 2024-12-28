@@ -9,7 +9,7 @@ Pour débuter le projet nous avons le html et le css déjà présent.
 - html
 - css
 - Javascript
--Git & Github
+- Git & Github
 
 ## Structure du projet :
 
@@ -19,15 +19,15 @@ Pour débuter le projet nous avons le html et le css déjà présent.
 - scripts : fichiers des scripts Javascript du projet
 
 ## Fonctionnalités à ajouter 
--un carrousel d'images dans la banière du site avec de nouvelles images et un texte pour chacunes d'elles, deux flèches pour naviguer dans le carrousel et des bullet points qui montre où on se trouve dans la navigation dans le carrousel.
-L'utilisateur doit pouvoir cliqué sur la flèche droite pour voir les images suivantes et sur la flèche gauche pour voir les images précédentes.
+- Un carrousel d'images dans la bannière du site avec de nouvelles images et un texte pour chacunes d'elles, deux flèches pour naviguer dans le carrousel et des bullets points qui montrent sur quelle image l'utilisateur se trouve lors de la navigation dans le carrousel.
+L'utilisateur doit pouvoir cliquer sur la flèche droite pour voir les images suivantes et sur la flèche gauche pour voir les images précédentes.
 
- - ajouter des eventlistener sur chacune des deux flèches
- - ajouter des bulets points
- - modifier le slide au clic sur le bouton
+ - ajouter des eventlisteners sur chacune des deux flèches
+ - ajouter des bullets points
+ - modifier le slider au clic sur le bouton
  - mettre un défilement infini sur le carrousel
 
 ## Utilisation
-Pour voir le site en local ouvrir le fichier index.html dans votre navigateur ou utiliser iverserver dan son IDE
+Pour voir le site en local ouvrir le fichier index.html dans votre navigateur ou utiliser Liverserver dans votre IDE
 
 
